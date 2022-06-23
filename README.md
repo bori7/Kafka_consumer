@@ -16,7 +16,7 @@ Add more brokers:
 
 Destroy a cluster:
 
-- ```docker-compose stop```
+- ``` docker-compose stop```
 
 ## Note
 
@@ -90,4 +90,4 @@ For example, to connect to a kafka running locally (assumes exposing port 1099)
       KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1 -Dcom.sun.management.jmxremote.rmi.port=1099"
       JMX_PORT: 1099
 
-Jconsole can now connect at ```jconsole 192.168.99.100:1099```
+Jconsole can now connect at ```jconsole 192.168.99.100:1099```# Kafka_consumer
