@@ -1,9 +1,9 @@
-package com.learnkafka.service;
+package com.codenotfound.kafka.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.learnkafka.entity.LibraryEvent;
-import com.learnkafka.jpa.LibraryEventsRepository;
+import com.codenotfound.kafka.entity.LibraryEvent;
+import com.codenotfound.kafka.jpa.LibraryEventsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -101,4 +101,5 @@ public class LibraryEventsService {
     private void handleSuccess(Integer key, String value, SendResult<Integer, String> result) {
         log.info("Message Sent SuccessFully for the key : {} and the value is {} , partition is {}", key, value, result.getRecordMetadata().partition());
     }
+
 }

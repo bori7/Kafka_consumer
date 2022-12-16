@@ -1,15 +1,11 @@
-FROM java:8
+FROM openjdk:11-jre-slim
 
-RUN apt-get update
+VOLUME /usr
+WORKDIR /usr/local/lib
+COPY target/*.jar /usr/local/lib/consumer-spring-kafka-boot-0-SNAPSHOT.jar
 
-RUN apt-get install -y maven
 
-RUN ls -l
+EXPOSE 8081
 
-WORKDIR /code
-
-ADD pom.xml /code/pom.xml
-
-ADD src /code/src
-
-CMD ["mvn", "test"]
+ENV RUN_PROFILE dev
+ENTRYPOINT ["java","-Dspring.profiles.active=local","-jar","/usr/local/lib/consumer-spring-kafka-boot-0-SNAPSHOT.jar"]

@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: com.codenotfound.kafka.consumer.LibraryEventsConsumerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 48.812 s <<< FAILURE! - in com.codenotfound.kafka.consumer.LibraryEventsConsumerIntegrationTest
+publishNewLibraryEvent  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: topics, topicPattern, or topicPartitions must be provided
+
+publishModifyLibraryEvent_999_LibraryEventId_failureRecord  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: topics, topicPattern, or topicPartitions must be provided
+
+publishModifyLibraryEvent_Not_A_Valid_LibraryEventId  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: topics, topicPattern, or topicPartitions must be provided
+
+publishUpdateLibraryEvent  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: topics, topicPattern, or topicPartitions must be provided
+
+publishModifyLibraryEvent_999_LibraryEventId_deadletterTopic  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: topics, topicPattern, or topicPartitions must be provided
+
+publishModifyLibraryEvent_Null_LibraryEventId  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: topics, topicPattern, or topicPartitions must be provided
+
+publishModifyLibraryEvent_999_LibraryEventId  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: topics, topicPattern, or topicPartitions must be provided
+

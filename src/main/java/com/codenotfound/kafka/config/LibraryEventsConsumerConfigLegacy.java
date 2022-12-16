@@ -1,6 +1,6 @@
-package com.learnkafka.config;
+package com.codenotfound.kafka.config;
 
-import com.learnkafka.service.LibraryEventsService;
+import com.codenotfound.kafka.service.LibraryEventsService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.ObjectProvider;
@@ -24,8 +24,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-//@Configuration
-//@EnableKafka
+@Configuration
+@EnableKafka
 @Slf4j
 public class LibraryEventsConsumerConfigLegacy {
 

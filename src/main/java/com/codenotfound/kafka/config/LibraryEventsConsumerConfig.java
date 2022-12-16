@@ -1,9 +1,10 @@
-package com.learnkafka.config;
+package com.codenotfound.kafka.config;
 
-import com.learnkafka.service.FailureService;
-import com.learnkafka.service.LibraryEventsService;
+
+import com.codenotfound.kafka.service.FailureService;
+import com.codenotfound.kafka.service.LibraryEventsService;
+import lombok.experimental.var;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.TopicPartition;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,14 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.listener.*;
+import org.springframework.kafka.listener.ConsumerRecordRecoverer;
+import org.springframework.kafka.listener.DeadLetterPublishingRecoverer;
+import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.kafka.support.ExponentialBackOffWithMaxRetries;
 import org.springframework.util.backoff.FixedBackOff;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @Configuration
 @EnableKafka
@@ -84,8 +88,8 @@ public class LibraryEventsConsumerConfig {
 
     public DefaultErrorHandler errorHandler() {
 
-        var exceptiopnToIgnorelist = List.of(
-                IllegalArgumentException.class
+        var exceptiopnToIgnorelist = new ArrayList<>(Arrays.asList(new Class []{ IllegalArgumentException.class})
+
         );
 
         ExponentialBackOffWithMaxRetries expBackOff = new ExponentialBackOffWithMaxRetries(2);

@@ -1,11 +1,9 @@
-package com.learnkafka.entity;
+package com.codenotfound.kafka.entity;
 
 
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @NoArgsConstructor

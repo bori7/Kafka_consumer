@@ -1,7 +1,8 @@
-package com.learnkafka.jpa;
+package com.codenotfound.kafka.jpa;
 
-import com.learnkafka.entity.LibraryEvent;
+import com.codenotfound.kafka.entity.LibraryEvent;
 import org.springframework.data.repository.CrudRepository;
+
 
 public interface LibraryEventsRepository extends CrudRepository<LibraryEvent,Integer> {
 }

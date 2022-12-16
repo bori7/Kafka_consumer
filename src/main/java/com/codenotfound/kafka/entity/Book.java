@@ -1,4 +1,4 @@
-package com.learnkafka.entity;
+package com.codenotfound.kafka.entity;
 
 
 import lombok.AllArgsConstructor;
@@ -10,8 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @NoArgsConstructor

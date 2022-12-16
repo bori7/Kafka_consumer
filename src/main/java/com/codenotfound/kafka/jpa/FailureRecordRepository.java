@@ -1,7 +1,8 @@
-package com.learnkafka.jpa;
+package com.codenotfound.kafka.jpa;
 
-import com.learnkafka.entity.FailureRecord;
+import com.codenotfound.kafka.entity.FailureRecord;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

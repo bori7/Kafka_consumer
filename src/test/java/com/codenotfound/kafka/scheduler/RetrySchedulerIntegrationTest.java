@@ -1,11 +1,10 @@
-package com.learnkafka.scheduler;
+package com.codenotfound.kafka.scheduler;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.learnkafka.config.LibraryEventsConsumerConfig;
-import com.learnkafka.entity.FailureRecord;
-import com.learnkafka.jpa.FailureRecordRepository;
-import com.learnkafka.jpa.LibraryEventsRepository;
-import com.learnkafka.service.LibraryEventsService;
+import com.codenotfound.kafka.config.LibraryEventsConsumerConfig;
+import com.codenotfound.kafka.entity.FailureRecord;
+import com.codenotfound.kafka.jpa.FailureRecordRepository;
+import com.codenotfound.kafka.service.LibraryEventsService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -15,7 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.test.context.ActiveProfiles;
-import java.util.List;
+import lombok.experimental.var;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.mockito.Mockito.times;
 
 @SpringBootTest
@@ -42,7 +45,7 @@ public class RetrySchedulerIntegrationTest {
         var failureRecord = new FailureRecord(null,"library-events", 123, record,1,0L, "exception occurred", LibraryEventsConsumerConfig.RETRY);
         var failureRecord1= new FailureRecord(null,"library-events", 123, record,1,1L, "exception occurred",LibraryEventsConsumerConfig.DEAD);
 
-        failureRecordRepository.saveAll(List.of(failureRecord, failureRecord1));
+        failureRecordRepository.saveAll(new ArrayList<>(Arrays.asList(new FailureRecord[]{failureRecord, failureRecord1})));
     }
 
 

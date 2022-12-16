@@ -1,4 +1,4 @@
-package com.learnkafka.entity;
+package com.codenotfound.kafka.entity;
 
 
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ public class FailureRecord {
     @GeneratedValue
     private Integer bookId;
     private String topic;
-    private Integer key;
+    private Integer faliureRecordKey;
     private String errorRecord;
     private Integer partition;
     private Long offset_value;

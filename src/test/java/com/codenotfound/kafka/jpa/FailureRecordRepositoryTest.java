@@ -1,17 +1,16 @@
-package com.learnkafka.jpa;
+package com.codenotfound.kafka.jpa;
 
-import com.learnkafka.config.LibraryEventsConsumerConfig;
-import com.learnkafka.entity.FailureRecord;
-import org.aspectj.lang.annotation.Before;
+import com.codenotfound.kafka.config.LibraryEventsConsumerConfig;
+import com.codenotfound.kafka.entity.FailureRecord;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import scala.util.Failure;
+import lombok.experimental.var;
 
-import java.util.List;
+//import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,7 +28,7 @@ class FailureRecordRepositoryTest {
         var failureRecord = new FailureRecord(null,"library-events", 123, record,1,0L, "exception occurred", LibraryEventsConsumerConfig.RETRY);
         var failureRecord1= new FailureRecord(null,"library-events", 123, record,1,1L, "exception occurred",LibraryEventsConsumerConfig.DEAD);
 
-        failureRecordRepository.saveAll(List.of(failureRecord, failureRecord1));
+        failureRecordRepository.saveAll(Arrays.asList(new FailureRecord[]{failureRecord, failureRecord1}));
     }
 
     @Test

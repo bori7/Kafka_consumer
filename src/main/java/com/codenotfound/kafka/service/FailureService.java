@@ -1,9 +1,9 @@
-package com.learnkafka.service;
+package com.codenotfound.kafka.service;
 
-import com.learnkafka.entity.FailureRecord;
-import com.learnkafka.jpa.FailureRecordRepository;
+import com.codenotfound.kafka.entity.FailureRecord;
+import com.codenotfound.kafka.jpa.FailureRecordRepository;
+import lombok.experimental.var;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.stereotype.Service;
 
 @Service
